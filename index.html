@@ -1,0 +1,68 @@
+<html>
+	<head>
+		<title>Resume</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<style>
+			* {box-sizing:border-box;}
+			.head-name {font:italic bold 60px Georgia;text-shadow: 2px 2px 5px red;} <!--{font-family:georgian;font-style:italic;font-variant: small-caps;font-size:5vw;} -->
+			.skills {display:none;}
+			.icon-box img {width:40px;height:40px;border-radius:100%;margin:0 0.5vw 0 0.5vw;}
+			.icon-box img:hover {box-shadow: 0px 0px 10px red;}
+			.mycard {position:absolute;top:20%;left:3%;z-index:2;}
+			.top-box {width:100%;height:230px;background-color:black;position:fixed;right:-100%;top:0;transition:right 2s;z-index:2;}
+			.top-box div {font-family:georgian;color:white;}
+			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
+			
+			
+			@media only screen and (max-width:768px) {
+				.head-name {font-size:8vw;text-shadow: 1px 1px 1px white;}
+				.mycard {left:0%;padding:0;}
+				.skills .mid-part {font:normal bold 4vw verdana;color:white;}
+				.skills {bottom:-45%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;margin-left:5%;border-radius:0 20px 0 20px;}
+				.lower-box {background-image:url("coding_img.jpg");background-position:center;background-attachment:fixed;}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lower-box">
+			<button onclick="show_on_click()" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;z-index:3;">
+				<span style="background-color:white;"class="navbar-toggler-icon"></span>
+			</button>
+			<div class="col-md-6 col-sm-12 col-12 mycard">
+				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
+				<div align="center" class="icon-box mt-3">
+					<a href="https://www.instagram.com/chinu_1540/"><img src="instagram_icon.jpg"></a>
+					<a href=""><img src="linkedin_icon.png"></a>
+					<img src="github_icon.png">
+				</div>
+				<center class="skills"><h2 class="mid-part">Developer and Responsive Designer</h2></center>
+			</div>
+			<div id="topid-box" class="top-box">
+				<img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;margin:15px 0 0 100px;position:fixed;left:-300px;transition:left 2s;">
+				<div class="col-8 float-right mt-5"><h1 style="font-size:30px;">The prosperity of life does so gets formed in a way that no else on this planet may suffer.</h1>
+				<div class="col-3 float-right"><h2 style="font-size:30px;">- Rudra. P. S.</h2></div>
+				</div>
+			</div>
+			<div class="brown-sheet" style="width:100%;height:800px;background-color:#060d13;opacity:0.9;z-index:1;"></div>
+		</div>
+		
+		<script>
+			function show_on_click(){
+				var left = document.getElementById("profileid_pic").style.left;
+				var right = document.getElementById("topid-box").style.right;
+				if(left == "-300px" && right == "-100%"){
+					document.getElementById("profileid_pic").style.left = "0px";
+					document.getElementById("topid-box").style.right = "0%";
+				}
+				else{
+					document.getElementById("profileid_pic").style.left = "-300px";
+					document.getElementById("topid-box").style.right = "-100%";
+				}
+			}
+		</script>
+	</body>
+</html>
