@@ -13,8 +13,10 @@
 			.brown-sheet {width:100%;height:800px;background-color:#060d13;opacity:0;z-index:1;}
 			.icon-box img {width:40px;height:40px;border-radius:100%;margin:0 0.5vw 0 0.5vw;}
 			.icon-box img:hover {box-shadow: 0px 0px 10px red;}
+			.skills .mid-part {font:normal bold 20px verdana;color:white;}
+			.skills {bottom:-40%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;border-radius:0 20px 0 20px;}
 			.mycard {position:absolute;top:20%;left:3%;z-index:2;}
-			.top-box {width:100%;height:230px;background-color:black;position:fixed;right:-100%;top:0;transition:right 2s;z-index:2;}
+			.top-box {width:100%;height:auto;background-color:#060d13;position:fixed;top:-100%;z-index:2;transition:top 1s;}
 			.top-box div {font-family:georgian;color:white;}
 			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
 			
@@ -24,7 +26,7 @@
 				.mycard {left:0%;padding:0;}
 				.brown-sheet {opacity:0.7;}
 				.skills .mid-part {font:normal bold 4vw verdana;color:white;}
-				.skills {bottom:-45%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;margin-left:5%;border-radius:0 20px 0 20px;}
+				.skills {margin-left:5%;}
 				.lower-box {background-image:url("coding_img.jpg");background-position:center;background-attachment:fixed;}
 			}
 		</style>
@@ -38,31 +40,32 @@
 				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
 					<a href="https://www.instagram.com/chinu_1540/"><img src="instagram_icon.jpg"></a>
-					<a href="#"><img src="linkedin_icon.png"></a>
-					<a href="https://github.com/Rudrapratap1515/"><img src="github_icon.png"></a>
+					<a href=""><img src="linkedin_icon.png"></a>
+					<img src="github_icon.png">
 				</div>
 				<center class="skills"><h2 class="mid-part">Developer and Responsive Designer</h2></center>
 			</div>
 			<div id="topid-box" class="top-box">
-				<img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;margin:15px 0 0 100px;position:fixed;left:-300px;transition:left 2s;">
-				<div class="col-8 float-right mt-5"><h1 style="font-size:30px;">The prosperity of life does so gets formed in a way that no else on this planet may suffer.</h1>
-				<div class="col-3 float-right"><h2 style="font-size:30px;">- Rudra. P. S.</h2></div>
-				</div>
+				<center><img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:0;transition:opacity 1s ease 1s;"></center>
+				<center><div>
+					<!--<h1 style="font-size:30px;">I took birth to dezine..!!</h1>-->
+				<!--<div class="col-3 float-right"><h2 style="font-size:30px;">- Rudra. P. S.</h2></div>-->
+				</div></center>
 			</div>
 			<div class="brown-sheet"></div>
 		</div>
 		
 		<script>
 			function show_on_click(){
-				var left = document.getElementById("profileid_pic").style.left;
-				var right = document.getElementById("topid-box").style.right;
-				if(left == "-300px" && right == "-100%"){
-					document.getElementById("profileid_pic").style.left = "0px";
-					document.getElementById("topid-box").style.right = "0%";
+				var visible = document.getElementById("profileid_pic").style.opacity;
+				var top = document.getElementById("topid-box").style.top;
+				if(visible == "0" && top == "-100%"){
+					document.getElementById("profileid_pic").style.opacity = "1";
+					document.getElementById("topid-box").style.top = "0";
 				}
 				else{
-					document.getElementById("profileid_pic").style.left = "-300px";
-					document.getElementById("topid-box").style.right = "-100%";
+					document.getElementById("profileid_pic").style.opacity = "0";
+					document.getElementById("topid-box").style.top = "-100%";
 				}
 			}
 		</script>
