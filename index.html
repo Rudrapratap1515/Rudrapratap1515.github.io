@@ -14,7 +14,7 @@
 			.icon-box img:hover {box-shadow: 0px 0px 10px red;}
 			.skills .mid-part {font:normal bold 20px verdana;color:white;}
 			.skills {bottom:-40%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;border-radius:0 20px 0 20px;}
-			.mycard {position:absolute;top:20%;left:3%;z-index:2;}
+			.mycard {position:absolute;top:20%;left:3%;z-index:2;opacity:1;transition:opacity 0.6s ease 0.8s;}
 			.top-box {width:100%;opacity:0.9;;height:auto;background-color:#060d13;position:fixed;top:-100%;z-index:2;transition:top 1s;}
 			.top-box div {font-family:georgian;color:white;}
 			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
@@ -43,7 +43,7 @@
 			<button onclick="show_on_click()" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;z-index:3;">
 				<span style="background-color:white;"class="navbar-toggler-icon"></span>
 			</button>
-			<div style="display:none;" class="col-md-6 col-sm-12 col-12 mycard">
+			<div id="myid-card" class="col-md-6 col-sm-12 col-12 mycard">
 				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
 					<a href="https://www.instagram.com/chinu_1540/"><img src="instagram_icon.jpg"></a>
@@ -72,15 +72,18 @@
 		<script>
 			function show_on_click(){
 				var visible = document.getElementById("profileid_pic").style.opacity;
+				var visible2 = document.getElementById("myid-card").style.opacity;
 				var top = document.getElementById("topid-box").style.top;
 				var side = document.getElementById("sideid-nav").style.top;
-				if(visible == "0" && top == "-100%" && side == "-100%"){
+				if(visible == "0" && visible2 == "1" && top == "-100%" && side == "-100%"){
 					document.getElementById("profileid_pic").style.opacity = "1";
+					document.getElementById("myid-card").style.opacity = "0";
 					document.getElementById("topid-box").style.top = "0";
 					document.getElementById("sideid-nav").style.top = "200px";	
 				}
 				else{
 					document.getElementById("profileid_pic").style.opacity = "0";
+					document.getElementById("myid-card").style.opacity = "1";
 					document.getElementById("topid-box").style.top = "-100%";
 					document.getElementById("sideid-nav").style.top = "-100%";
 				}
