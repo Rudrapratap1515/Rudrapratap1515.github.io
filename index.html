@@ -21,6 +21,11 @@
 			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
 			
 			
+			.side-nav {width:35%;height:auto;position:fixed;top:200px;right:0;background-color:#060d13;z-index:3;}
+			.side-nav ul {margin:0;padding:10px;}
+			.side-nav ul li {list-style-type:none;}
+			.side-nav ul li a {display:block;margin:30px 10px 30px 10px;text-decoration:none;color:white;font:normal 30px georgian;padding:10px;}
+			
 			@media only screen and (max-width:768px) {
 				.head-name {font-size:8vw;text-shadow: 1px 1px 1px white;}
 				.mycard {left:0%;padding:0;}
@@ -47,12 +52,19 @@
 			</div>
 			<div id="topid-box" class="top-box">
 				<center><img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:0;transition:opacity 1s ease 1s;"></center>
-				<center><div>
-					<!--<h1 style="font-size:30px;">I took birth to dezine..!!</h1>-->
-				<!--<div class="col-3 float-right"><h2 style="font-size:30px;">- Rudra. P. S.</h2></div>-->
-				</div></center>
 			</div>
 			<div class="brown-sheet"></div>
+		</div>
+		<!-- Navigation Bar-->
+		<div class="side-nav">
+			<center>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Skills & Certificates</a></li>
+					<li><a href="#">Way To Contact me</a></li>
+					<li><a href="#">Some Captured Moments</a></li>
+				</ul>
+			</center>
 		</div>
 		
 		<script>
