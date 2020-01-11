@@ -3,9 +3,6 @@
 		<title>Resume</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-		<link rel="icon" href="dist/img/favicon.png">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-		crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -21,6 +18,14 @@
 			.top-box {width:100%;opacity:0.9;;height:auto;background-color:#060d13;position:fixed;top:-100%;z-index:2;transition:top 1s;}
 			.top-box div {font-family:georgian;color:white;}
 			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
+			
+			<!--Menu icon Animation CSS-->
+			.container {display: inline-block;cursor: pointer;}
+			.bar1, .bar2, .bar3 {width: 35px;height: 5px;background-color: #333;margin: 6px 0;transition: 0.4s;}
+			.change .bar1 {transform: rotate(-45deg) translate(-9px, 6px);}
+			.change .bar2 {opacity: 0;}
+			.change .bar3 {transform: rotate(45deg) translate(-8px, -8px);}
+			<!---->
 			
 			<!-- Navigation CSS-->
 			.side-nav {width:100%;opacity:0.9;height:auto;position:fixed;top:-100%;right:0;background-color:#060d13;z-index:3;transition:top 1s ease 0.8s;}
@@ -43,15 +48,15 @@
 	</head>
 	<body>
 		<div class="lower-box">
-			<button onclick="show_on_click()" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;z-index:3;">
+			<button onclick="" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;">
 				<span style="background-color:white;"class="navbar-toggler-icon"></span>
 			</button>
+			<div class="menu-icon" onclick="show_on_click();myFunction(this)" style="z-index:3;position:fixed;top:0;right:0;">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+			</div>
 			<div id="myid-card" class="col-md-6 col-sm-12 col-12 mycard">
-				 <div class="menu-btn">
-					<div class="btn-line"></div>
-					<div class="btn-line"></div>
-					<div class="btn-line"></div>
-				</div>
 				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
 					<a href="https://www.instagram.com/chinu_1540/"><img src="instagram_icon.jpg"></a>
@@ -95,6 +100,9 @@
 					document.getElementById("topid-box").style.top = "-100%";
 					document.getElementById("sideid-nav").style.top = "-100%";
 				}
+			}
+			function myFunction(x) {
+				x.classList.toggle("change");
 			}
 		</script>
 	</body>
