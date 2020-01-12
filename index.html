@@ -7,14 +7,16 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 		
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+		crossorigin="anonymous">
 		
 		<style>
 			* {box-sizing:border-box;}
 			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;position:fixed;top:0;z-index:0;}
 			.mycard {position:absolute;top:20%;left:3%;opacity:1;transition:opacity 0.6s ease 0.8s;z-index:2;}
 			.head-name {font:italic bold 60px Georgia;text-shadow: 2px 2px 5px red;}
-			.icon-box img {width:40px;height:40px;border-radius:100%;margin:0 0.5vw 0 0.5vw;}
-			.icon-box img:hover {box-shadow: 0px 0px 10px red;}
+			.icon-box i {margin:0 5px;color:black;}
+			.icon-box i:hover {color:#00ff00;}
 			.skills .mid-part {font:normal bold 20px verdana;color:white;}
 			.skills {bottom:-40%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;border-radius:0 20px 0 20px;}
 			.brown-sheet {width:100%;height:800px;background-color:#060d13;opacity:0;z-index:1;}
@@ -45,6 +47,8 @@
 				.menu-icon div {background-color:white;}
 				.menu-icon .tool-text {background-color:white;color:black;font:italic 3vw georgian;}
 				.menu-icon .tool-text::after {border-color: transparent transparent white; transparent;}
+				.icon-box i {color:white;}
+				.icon-box i:hover {color:#00ff00;}
 			}
 		</style>
 	</head>
@@ -65,9 +69,9 @@
 			<div id="myid-card" class="col-md-6 col-sm-12 col-12 mycard">
 				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
-					<a href="https://www.instagram.com/chinu_1540/"><img src="instagram_icon.jpg"></a>
-					<a href=""><img src="linkedin_icon.png"></a>
-					<img src="github_icon.png">
+					<a href="https://www.instagram.com/chinu_1540/"><i class="fab fa-instagram fa-2x"></i></a>
+					<a href=""><i class="fab fa-linkedin fa-2x"></i></a>
+					<a href="https://github.com/rudrapratap1515"><i class="fab fa-github fa-2x"></i></a>
 				</div>
 				<center class="skills"><h2 class="mid-part">Developer and Responsive Designer</h2></center>
 			</div>
