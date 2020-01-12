@@ -6,56 +6,62 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		
+		
 		<style>
 			* {box-sizing:border-box;}
-			.head-name {font:italic bold 60px Georgia;text-shadow: 2px 2px 5px red;} <!--{font-family:georgian;font-style:italic;font-variant: small-caps;font-size:5vw;} -->
-			.brown-sheet {width:100%;height:800px;background-color:#060d13;opacity:0;z-index:1;}
+			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;position:fixed;top:0;z-index:0;}
+			.mycard {position:absolute;top:20%;left:3%;opacity:1;transition:opacity 0.6s ease 0.8s;z-index:2;}
+			.head-name {font:italic bold 60px Georgia;text-shadow: 2px 2px 5px red;}
 			.icon-box img {width:40px;height:40px;border-radius:100%;margin:0 0.5vw 0 0.5vw;}
 			.icon-box img:hover {box-shadow: 0px 0px 10px red;}
 			.skills .mid-part {font:normal bold 20px verdana;color:white;}
 			.skills {bottom:-40%;position:absolute;background-color:#060d13;display:block;border-bottom:2px solid #00ff00;width:90%;border-radius:0 20px 0 20px;}
-			.mycard {position:absolute;top:20%;left:3%;z-index:2;opacity:1;transition:opacity 0.6s ease 0.8s;}
-			.top-box {width:100%;opacity:0.9;;height:auto;background-color:#060d13;position:fixed;top:-100%;z-index:2;transition:top 1s;}
-			.top-box div {font-family:georgian;color:white;}
-			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;z-index:1;position:fixed;top:0;}
-			
-			<!--Menu icon Animation CSS-->
-			<!--.container {display: inline-block;cursor: pointer;}
-			.bar1, .bar2, .bar3 {width: 35px;height: 5px;background-color: #333;margin: 6px 0;transition: 0.4s;}
-			.change .bar1 {transform: rotate(-45deg) translate(-9px, 6px);}
-			.change .bar2 {opacity: 0;}
-			.change .bar3 {transform: rotate(45deg) translate(-8px, -8px);}-->
-			<!---->
+			.brown-sheet {width:100%;height:800px;background-color:#060d13;opacity:0;z-index:1;}
+			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:2;}
 			
 			<!-- Navigation CSS-->
-			.side-nav {width:100%;opacity:0.9;height:auto;position:fixed;top:-100%;right:0;background-color:#060d13;z-index:3;transition:top 1s ease 0.8s;}
-			.side-nav ul {margin:0;padding:10px;}
-			.side-nav ul li {list-style-type:none;}
-			.side-nav ul li a {display:block;border-width:0px 40px;border-style:solid;border-color:#060d13;margin:40px 0px 40px 0px;text-decoration:none;color:white;font:normal 30px georgian;padding:10px;transition:border 0.5s;}
-			.side-nav ul li a:hover {border-color:#00ff00;color:#00ff00;}
+			.navigation {}
+			.navigation ul {margin:0;padding:10px;}
+			.navigation ul li {list-style-type:none;}
+			.navigation ul li a {display:block;border-width:0px 40px;border-style:solid;border-color:#060d13;margin:40px 0px 40px 0px;text-decoration:none;color:white;font:normal 30px georgian;padding:10px;transition:border 0.5s;}
+			.navigation ul li a:hover {border-color:#00ff00;color:#00ff00;}
+			<!---->
+			
+			.menu-icon {display:inline-block;position:fixed;top:0;right:0;margin:20px 30px;cursor:pointer;z-index:3;}
+			.menu-icon div {width:30px;height:5px;background-color:black;margin:6px 0;}
+			.menu-icon .tool-text {width:230px;position:absolute;left:-660%;bottom:-140%;background-color:black;color:white;padding:10px;border-radius:10px;font:normal 20px georgian;opacity:0;transition:opacity 1s;}
+			.menu-icon .tool-text::after {content: "";position: absolute;bottom: 100%;left: 50%;margin-left: 85px;border-width: 10px;border-style: solid;border-color: transparent transparent black transparent;}
+			
 			
 			@media only screen and (max-width:768px) {
-				.head-name {font-size:8vw;text-shadow: 1px 1px 1px white;}
+				.lower-box {background-image:url("coding_img.jpg");background-position:center;background-attachment:fixed;}
 				.mycard {left:0%;padding:0;}
-				.brown-sheet {opacity:0.7;}
+				.head-name {font-size:8vw;text-shadow: 1px 1px 1px white;}
 				.skills .mid-part {font:normal bold 4vw verdana;color:white;}
 				.skills {margin-left:5%;}
-				.lower-box {background-image:url("coding_img.jpg");background-position:center;background-attachment:fixed;}
-				.side-nav ul li a {font:normal 5vw georgian;margin:30px 0px 30px 0px;}
-				.side-nav {width:100%;}
+				.brown-sheet {opacity:0.7;}
+				.navigation ul li a {font:normal 5vw georgian;margin:30px 0px 30px 0px;}
+				.menu-icon div {background-color:white;}
+				.menu-icon .tool-text {background-color:white;color:black;}
+				.menu-icon .tool-text::after {border-color: transparent transparent white; transparent;}
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="myFunction()">
 		<div class="lower-box">
-			<button onclick="show_on_click()" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;z-index:3">
+			<!--<h1 id="hello" style="z-index:3;opacity:0;transition:opacity 1s;">Hello World</h1>-->
+			<!--<button onclick="show_on_click()" class="navbar-toggler" type="button" style="background-color:black;position:fixed;top:0;right:0;z-index:3;">
 				<span style="background-color:white;"class="navbar-toggler-icon"></span>
-			</button>
-			<!--<div class="menu-icon" onclick="show_on_click();myFunction(this)" style=";position:fixed;top:0;right:0;">
+			</button>-->
+			<!--<img src="menu_icon_dark.jpg" style="width:50px;height:50px;border-radius:100%;position:fixed;top:0;right:0;z-index:3;">-->
+			<!--<span class="glyphicon glyphicon-menu-hamburger" style="position:fixed;top:0;right:0;z-index:3;"></span>-->
+			<div class="menu-icon" onclick="show_on_click()">
 				<div class="bar1"></div>
 				<div class="bar2"></div>
 				<div class="bar3"></div>
-			</div>-->
+				<span id="toolid-text" class="tool-text">Click here to know more</span>
+			</div>
 			<div id="myid-card" class="col-md-6 col-sm-12 col-12 mycard">
 				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
@@ -66,12 +72,12 @@
 				<center class="skills"><h2 class="mid-part">Developer and Responsive Designer</h2></center>
 			</div>
 			<div id="topid-box" class="top-box">
-				<center><img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:0;transition:opacity 1s ease 1s;"></center>
+				<center><img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
 			</div>
 			<div class="brown-sheet"></div>
 		</div>
 		<!-- Navigation Bar-->
-		<div id="sideid-nav" class="side-nav">
+		<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;">
 			<center>
 				<ul>
 					<li><a href="#" style="border-color:#00ff00;color:#00ff00;">Home</a></li>
@@ -81,29 +87,32 @@
 				</ul>
 			</center>
 		</div>
-		
 		<script>
 			function show_on_click(){
 				var visible = document.getElementById("profileid_pic").style.opacity;
 				var visible2 = document.getElementById("myid-card").style.opacity;
 				var top = document.getElementById("topid-box").style.top;
-				var side = document.getElementById("sideid-nav").style.top;
-				if(visible == "0" && visible2 == "1" && top == "-100%" && side == "-100%"){
+				var navi = document.getElementById("navigationid").style.top;
+				if(visible == "0" && visible2 == "1" && top == "-100%" && navi == "-100%"){
 					document.getElementById("profileid_pic").style.opacity = "1";
 					document.getElementById("myid-card").style.opacity = "0";
 					document.getElementById("topid-box").style.top = "0";
-					document.getElementById("sideid-nav").style.top = "200px";	
+					document.getElementById("navigationid").style.top = "200px";	
 				}
 				else{
 					document.getElementById("profileid_pic").style.opacity = "0";
 					document.getElementById("myid-card").style.opacity = "1";
 					document.getElementById("topid-box").style.top = "-100%";
-					document.getElementById("sideid-nav").style.top = "-100%";
+					document.getElementById("navigationid").style.top = "-100%";
 				}
 			}
-			//function myFunction(x) {
-				//x.classList.toggle("change");
-			//}
+			function myFunction(){
+				document.getElementById("toolid-text").style.opacity = "1";
+				setTimeout(function() {
+					document.getElementById('toolid-text').style.opacity = "0";
+					//document.getElementById('micicon').className="fas fa-microphone";
+				}, 5000);
+			}
 		</script>
 	</body>
 </html>
