@@ -12,7 +12,7 @@
 		
 		<style>
 			* {box-sizing:border-box;}
-			.lower-box {background-image:url("background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;position:fixed;top:0;z-index:0;}
+			.lower-box {background-image:url("imgs/background_img.jpg");background-size:cover;width:100%;height:800px;background-repeat:no-repeat;position:fixed;top:0;z-index:0;}
 			.mycard {position:absolute;top:20%;left:3%;opacity:1;transition:opacity 0.6s ease 0.8s;z-index:2;}
 			.head-name {font:italic bold 60px Georgia;text-shadow: 2px 2px 5px red;}
 			.icon-box i {margin:0 5px;color:black;}
@@ -37,7 +37,7 @@
 			
 			
 			@media only screen and (max-width:768px) {
-				.lower-box {background-image:url("coding_img.jpg");background-position:center;background-attachment:fixed;}
+				.lower-box {background-image:url("imgs/coding_img.jpg");background-position:center;background-attachment:fixed;}
 				.mycard {left:0%;padding:0;}
 				.head-name {font-size:8vw;text-shadow: 1px 1px 1px white;}
 				.skills .mid-part {font:normal bold 4vw verdana;color:white;}
@@ -49,6 +49,7 @@
 				.menu-icon .tool-text::after {border-color: transparent transparent white; transparent;}
 				.icon-box i {color:white;}
 				.icon-box i:hover {color:#00ff00;}
+				.red-word {border-bottom:2px solid #00ff00;}
 			}
 		</style>
 	</head>
@@ -67,7 +68,7 @@
 				<center><span id="toolid-text" class="tool-text" style="cursor:default;">Click here to know more</span></center>
 			</div>
 			<div id="myid-card" class="col-md-6 col-sm-12 col-12 mycard">
-				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
+				<h1 class="head-name"><center>Rudra Pratap Singh </center><center><span class="red-word" style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Rathore</span></center></h1>
 				<div align="center" class="icon-box mt-3">
 					<a href="https://www.instagram.com/chinu_1540/"><i class="fab fa-instagram fa-2x"></i></a>
 					<a href=""><i class="fab fa-linkedin fa-2x"></i></a>
@@ -76,11 +77,13 @@
 				<center class="skills"><h2 class="mid-part">Developer and Responsive Designer</h2></center>
 			</div>
 			<div id="topid-box" class="top-box">
-				<center><img id="profileid_pic" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
+				<center><img id="imgs/profile_pic.jpg" src="profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
 			</div>
 			<div class="brown-sheet"></div>
 		</div>
+		
 		<!-- Navigation Bar-->
+		
 		<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;">
 			<center>
 				<ul>
