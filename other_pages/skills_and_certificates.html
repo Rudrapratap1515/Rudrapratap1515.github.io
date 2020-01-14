@@ -18,7 +18,9 @@
 			.heading {height:17.5vw;z-index:1;}
 			.heading h1 {font:italic bold 8vw Georgia;text-shadow: 1px 1px 1px white;}
 			#i1, #i2 {display:block;font-size:3.5vw;color:red;padding:0;animation: arrow-anime 1s infinite;}
-			.parag {margin:2.5vw 0 0 0;padding:0;z-index:1;}
+			.parag {margin:4vw 0 0 0;padding:0;z-index:1;}
+			.bio-img {border-radius:100%;width:16vw;height:16vw;border:1.5px solid #00ff00;}
+			.bio-parag {color:white;background-color:black;margin:0;font:italic 2.5vw Georgia;padding:3vw 5vw 3vw 5vw;}
 			
 			
 			@keyframes arrow-anime{
@@ -30,6 +32,8 @@
 			@media only screen and (max-width:768px) {
 				.heading {height:24vw;}
 				.heading h1 {font-size:14vw;}
+				.bio-img {width:23vw;height:23vw;}
+				.bio-parag {font-size:4vw;}
 			}
 		</style>
 	</head>
@@ -45,14 +49,14 @@
 				</center>
 			</div>
 			<div class="col-12 row parag" style="background-color:red;">
-				<div class="col-md-4 col-12" style="background-color:white;margin:0;">
+				<div class="col-md-4 col-12" style="background-color:white;margin:0;padding:3vw">
 					<center>
-						<img src="../imgs/profile_pic.jpg" style="border-radius:100%;width:14vw;height:14vw;border:1.5px solid #00ff00;">
+						<img class="bio-img" src="../imgs/profile_pic.jpg">
 					</center>
 				</div>
 				<div class="col-md-8 col-12" style="margin:0;padding:0;">
 					<center>
-						<p style="color:white;background-color:black;margin:0;font:normal 2.5vw georgian;padding:2px;">
+						<p class="bio-parag">
 							Being creative is the second most difficuly job in the world , being a desiner still remains at the first..!!
 							I am a front-end web designer at my best and can also produce a highly dynamic web-application which works on the base
 							of PHP and uses database using MySql at the end of the stack to save data in database. 
