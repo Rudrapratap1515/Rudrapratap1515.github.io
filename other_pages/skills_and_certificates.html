@@ -20,9 +20,22 @@
 			#i1, #i2 {display:block;font-size:3.5vw;color:red;padding:0;animation: arrow-anime 1s infinite;}
 			.parag {margin:4vw 0 0 0;padding:0;z-index:1;}
 			.bio-img {border-radius:100%;width:18vw;height:18vw;border:1.5px solid #00ff00;}
-			.bio-parag {background-color:none;margin:0;font:italic 2.5vw Georgia;padding:3vw 5vw 3vw 5vw;color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+			.bio-parag {background-color:black;margin:0;font:italic 2.5vw Georgia;padding:3vw 5vw 3vw 5vw;color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-weight:bold;}
 			.lang-list h2 {color:white;font:italic 3.5vw Georgia;}
 			.lang-list ul {color:white;list-style-type:none;margin:0;padding:0;font:italic 2vw Georgia;}
+			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:1;}
+
+			
+			<!-- Navigation CSS-->
+			.navigation {}
+			.navigation ul {margin:0;padding:10px;}
+			.navigation ul li {list-style-type:none;}
+			.navigation ul li a {display:block;border-width:0px 40px;border-style:solid;border-color:#060d13;margin:40px 0px 40px 0px;text-decoration:none;color:white;font:normal 30px georgian;padding:10px;transition:border 0.5s;}
+			.navigation ul li a:hover {border-color:#00ff00;color:#00ff00;}
+			<!---->
+			
+			.menu-icon {display:inline-block;position:fixed;top:0;right:0;margin:20px 30px;cursor:pointer;z-index:3;}
+			.menu-icon div {width:30px;height:5px;background-color:black;margin:6px 0;}
 			
 			
 			@keyframes arrow-anime{
@@ -35,7 +48,7 @@
 				.heading {height:24vw;}
 				.heading h1 {font-size:14vw;}
 				.bio-img {width:40vw;height:40vw;}
-				.bio-parag {font-size:6vw;}
+				.bio-parag {font-size:6vw;font-weight:normal;}
 				.lang-list center h2 {font-size:6vw;}
 				.lang-list ul li {font-size:3.5vw;}
 			}
@@ -43,6 +56,12 @@
 	</head>
 	<body>
 		<div class="background-box">
+			<div class="menu-icon" onclick="show_on_click()">
+				<div class="bar1"></div>
+				<div class="bar2"></div>
+				<div class="bar3"></div>
+				<!--<center><span id="toolid-text" class="tool-text" style="cursor:default;">Click here to know more</span></center>-->
+			</div>
 			<div class="heading col-12">
 				<center>
 					<h1>My <span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;border-bottom:2px solid #00ff00;">Skills</span></h1>
@@ -52,8 +71,8 @@
 					</a>
 				</center>
 			</div>
-			<div id="" class="col-12 row parag" style="background-color:none;">
-				<div class="col-md-4 col-12" style="background-color:none;margin:0;padding:3vw">
+			<div id="" class="col-12 row parag" style="background-color:white;">
+				<div class="col-md-4 col-12" style="background-color:red;margin:0;padding:3vw">
 					<center>
 						<img class="bio-img" src="../imgs/profile_pic.jpg">
 					</center>
@@ -82,7 +101,39 @@
 					</ul>
 				</center>	
 			</div>
+			<div id="topid-box" class="top-box">
+				<center><img id="profileid_pic" src="../imgs/profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
+			</div>
+			<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;z-index:1;">
+				<center>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#" style="border-color:#00ff00;color:#00ff00;">Skills & Certificates</a></li>
+						<li><a href="#">Way To Contact me</a></li>
+						<li><a href="#">Some Captured Moments</a></li>
+					</ul>
+				</center>
+			</div>
 			<div class="dark-sheet"></div>
 		</div>
+		<script>
+			function show_on_click(){
+				var visible = document.getElementById("profileid_pic").style.opacity;
+				var top = document.getElementById("topid-box").style.top;
+				var navi = document.getElementById("navigationid").style.top;
+				if(visible == "0" && top == "-100%" && navi == "-100%"){
+					document.getElementById("profileid_pic").style.opacity = "1";
+					//document.getElementById("myid-card").style.opacity = "0";
+					document.getElementById("topid-box").style.top = "0";
+					document.getElementById("navigationid").style.top = "200px";	
+				}
+				else{
+					document.getElementById("profileid_pic").style.opacity = "0";
+					//document.getElementById("myid-card").style.opacity = "1";
+					document.getElementById("topid-box").style.top = "-100%";
+					document.getElementById("navigationid").style.top = "-100%";
+				}
+			}
+		</script>
 	</body>
 </html>
