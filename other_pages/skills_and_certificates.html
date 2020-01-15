@@ -13,7 +13,7 @@
 		crossorigin="anonymous">
 		<style>
 			html {scroll-behavior:smooth;}
-			.background-box {background: url('../imgs/coding_img_2.jpg') no-repeat fixed center;background-size:cover;width:100%;height:1500px;}
+			.background-box {background: url('../imgs/coding_img_2.jpg') no-repeat fixed center;background-size:cover;width:100%;height:2500px;}
 			.dark-sheet {width:100%;height:100%;background-color:#060d13;opacity:0.9;position:fixed;top:0;z-index:0;}
 			.heading {height:17.5vw;z-index:1;}
 			.heading h1 {font:italic bold 8vw Georgia;text-shadow: 1px 1px 1px white;}
@@ -22,11 +22,17 @@
 			.bio-img {border-radius:100%;width:18vw;height:18vw;border:1.5px solid #00ff00;}
 			.bio-parag {background-color:black;margin:0;font:italic 2.5vw Georgia;padding:3vw 5vw 3vw 5vw;color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-weight:bold;}
 			.lang-list h2 {color:white;font:italic 3.5vw Georgia;}
+			.lang-list {height:auto;background-color:#060d13;margin:auto;margin-top:3vw;z-index:1;padding:2vw;border-bottom:1vw solid #00ff00;}
 			.lang-list ul {color:white;list-style-type:none;margin:0;padding:0;font:italic 2vw Georgia;}
-			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:1;}
+			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:2;}
+			.certificate-box {background-color:none;z-index:1;margin:4vw 0 0 0;padding:0;}
+			.certificate-box div {margin:0;padding:2vw;}
+			.certificate-box div h4 {text-align:center;padding:1vw;color:white;font:italic 2vw Georgia;background-color:#060d13;border-bottom:5px solid #00ff00;}
+			.certificate-box div img {margin:0;padding:0;}
 
 			
 			<!-- Navigation CSS-->
+			
 			.navigation {}
 			.navigation ul {margin:0;padding:10px;}
 			.navigation ul li {list-style-type:none;}
@@ -35,7 +41,7 @@
 			<!---->
 			
 			.menu-icon {display:inline-block;position:fixed;top:0;right:0;margin:20px 30px;cursor:pointer;z-index:3;}
-			.menu-icon div {width:30px;height:5px;background-color:black;margin:6px 0;}
+			.menu-icon div {width:30px;height:5px;background-color:white;margin:6px 0;}
 			
 			
 			@keyframes arrow-anime{
@@ -52,6 +58,9 @@
 				.lang-list center h2 {font-size:6vw;}
 				.lang-list ul li {font-size:3.5vw;}
 				.navigation ul li a {font:normal 5vw georgian;margin:30px 0px 30px 0px;}
+				.certificate-box {margin-top:15vw;}
+				.certificate-box div {padding:5vw 10vw;}
+				.certificate-box div h4 {font-size:4vw;padding:2vw;}
 			}
 		</style>
 	</head>
@@ -89,7 +98,7 @@
 					</center>
 				</div>
 			</div>
-			<div class="col-md-5 col-12 lang-list" style="height:auto;background-color:#060d13;margin:auto;margin-top:3vw;z-index:1;padding:2vw;border-bottom:1vw solid #00ff00;">
+			<div class="col-md-5 col-12 lang-list">
 				<center>
 					<h2>Languages i work with :</h2>
 					<ul>
@@ -102,9 +111,38 @@
 					</ul>
 				</center>	
 			</div>
-			<div id="topid-box" class="top-box">
-				<center><img id="profileid_pic" src="../imgs/profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
+			<div class="heading col-12" style="margin-top:3vw;">
+				<center>
+					<h1>My <span style="color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;border-bottom:2px solid #00ff00;">Certificates</span></h1>
+					<a href="" style="text-decoration:none;">
+						<i id="i1" style="margin-top:2vw" class="fa fa-chevron-down"></i>
+						<i id="i2" style="margin-top:-2vw" class="fa fa-chevron-down"></i>
+					</a>
+				</center>
 			</div>
+			<!--<div class="row col-12" style="background-color:red;z-index:1;margin:10vw 0 0 0;padding:0;">
+					<img class="col-md-4 col-12" src="../imgs/data-science-certificate.jpg" style="width:33vw;height:23vw;margin:0;padding:0 2vw;border:2px solid #00ff00;">
+					<h3 class="col-md-4 col-12">Data Science Certificate</h3>
+					<img class="col-md-4 col-12" src="../imgs/chatbot-certificate.jpg" style="width:33vw;height:23vw;margin:0;padding:0 2vw;border:2px solid #00ff00;">
+					<img class="col-md-4 col-12"src="../imgs/nvidia-certificate.jpg" style="width:30vw;height:23vw;margin:0;padding:0 2vw;border:2px solid #00ff00;">
+			</div>-->
+			<div class="row col-12 certificate-box">
+				<div class="col-md-4 col-12">
+					<img class="col-12" src="../imgs/data-science-certificate.jpg">
+					<h4>Data Science Certificate</h4>
+				</div>
+				<div class="col-md-4 col-12">
+					<img class="col-12" src="../imgs/chatbot-certificate.jpg">
+					<h4>Chatbot Certificate</h4>
+				</div>
+				<div class="col-md-4 col-12">
+					<img class="col-12" src="../imgs/nvidia-certificate.jpg">
+					<h4>Nvidia Certificate</h4>
+				</div>
+			</div>
+			
+			<!-- Navigation Bar-->
+			
 			<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;z-index:1;">
 				<center>
 					<ul>
@@ -115,6 +153,14 @@
 					</ul>
 				</center>
 			</div>
+			
+			<!--Profile picture box-->
+			
+			<div id="topid-box" class="top-box">
+				<center><img id="profileid_pic" src="../imgs/profile_pic.jpg" style="border-radius:100%;height:200px;width:200px;opacity:1;transition:opacity 1s ease 1s;"></center>
+			</div>
+			
+			<!---->
 			<div class="dark-sheet"></div>
 		</div>
 		<script>
