@@ -21,14 +21,15 @@
 			.parag {margin:4vw 0 0 0;padding:0;z-index:1;}
 			.bio-img {border-radius:100%;width:18vw;height:18vw;border:1.5px solid #00ff00;}
 			.bio-parag {background-color:none;margin:0;font:italic 2.5vw Georgia;padding:3vw 5vw 3vw 5vw;color:red;text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;font-weight:bold;}
-			.lang-list h2 {color:white;font:italic 3.5vw Georgia;}
 			.lang-list {height:auto;background-color:#060d13;margin:auto;margin-top:3vw;z-index:1;padding:2vw;border-bottom:1vw solid #00ff00;}
+			.lang-list h2 {color:white;font:italic 3.5vw Georgia;}
 			.lang-list ul {color:white;list-style-type:none;margin:0;padding:0;font:italic 2vw Georgia;}
-			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:2;}
-			.certificate-box {background-color:none;z-index:1;margin:4vw 0 0 0;padding:0;}
+			.top-box {width:100%;opacity:0.9;height:auto;background-color:#060d13;position:fixed;top:-100%;transition:top 1s;z-index:4;}
+			.certificate-box {margin:4vw 0 0 0;padding:0;z-index:1;}
 			.certificate-box div {margin:0;padding:2vw;}
 			.certificate-box div h4 {text-align:center;padding:1vw;color:white;font:italic 2vw Georgia;background-color:#060d13;border-bottom:5px solid #00ff00;}
-			.certificate-box div img {margin:0;padding:0;}
+			.certificate-box div img {margin:0;padding:0;height:22.35vw;cursor:pointer;}
+			.img-show-case {display:none;height:auto;position:fixed;top:85px;left:8%;background-color:#060d13;box-shadow:0px 0px 300px #060d13;z-index:3;}
 
 			
 			<!-- Navigation CSS-->
@@ -40,7 +41,7 @@
 			.navigation ul li a:hover {border-color:#00ff00;color:#00ff00;}
 			<!---->
 			
-			.menu-icon {display:inline-block;position:fixed;top:0;right:0;margin:20px 30px;cursor:pointer;z-index:3;}
+			.menu-icon {display:inline-block;position:fixed;top:0;right:0;margin:20px 30px;cursor:pointer;z-index:5;}
 			.menu-icon div {width:30px;height:5px;background-color:white;margin:6px 0;}
 			
 			
@@ -59,6 +60,7 @@
 				.lang-list ul li {font-size:3.5vw;}
 				.navigation ul li a {font:normal 5vw georgian;margin:30px 0px 30px 0px;}
 				.certificate-box {margin-top:20vw;}
+				.certificate-box div img {height:auto;}
 				.certificate-box div {padding:5vw 10vw;}
 				.certificate-box div h4 {font-size:4vw;padding:2vw;}
 			}
@@ -81,8 +83,8 @@
 					</a>
 				</center>
 			</div>
-			<div id="" class="col-12 row parag" style="background-color:none;">
-				<div class="col-md-4 col-12" style="background-color:none;margin:0;padding:3vw">
+			<div id="" class="col-12 row parag">
+				<div class="col-md-4 col-12" style="margin:0;padding:3vw">
 					<center>
 						<img class="bio-img" src="../imgs/profile_pic.jpg">
 					</center>
@@ -128,22 +130,26 @@
 			</div>-->
 			<div class="row col-12 certificate-box">
 				<div class="col-md-4 col-12">
-					<img class="col-12" src="../imgs/data-science-certificate.jpg">
+					<img class="col-12" src="../imgs/data-science-certificate.jpg" onclick="largeImg('../imgs/data-science-certificate.jpg')">
 					<h4>Data Science Certificate</h4>
 				</div>
 				<div class="col-md-4 col-12">
-					<img class="col-12" src="../imgs/chatbot-certificate.jpg">
+					<img class="col-12" src="../imgs/chatbot-certificate.jpg" onclick="largeImg('../imgs/chatbot-certificate.jpg')">
 					<h4>Chatbot Certificate</h4>
 				</div>
 				<div class="col-md-4 col-12">
-					<img class="col-12" src="../imgs/nvidia-certificate.jpg">
+					<img class="col-12" src="../imgs/nvidia-certificate.jpg" onclick="largeImg('../imgs/nvidia-certificate.jpg')">
 					<h4>Nvidia Certificate</h4>
 				</div>
+			</div>
+			<div id="imgid-show-case" class="img-show-case col-10">
+				<div style="position:absolute;top:0;right:0;margin:1vw 2vw 0 0"><i style="font-size:3vw;color:white;cursor:pointer;" class="fa fa-close" onclick="fade()"></i></div>
+				<center><img id="targetid-img" src="" class="col-8"></center>
 			</div>
 			
 			<!-- Navigation Bar-->
 			
-			<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;z-index:1;">
+			<div id="navigationid" class="navigation" style="width:100%;height:auto;opacity:0.9;background-color:#060d13;position:fixed;top:-100%;transition:top 1s ease 0.8s;z-index:4;">
 				<center>
 					<ul>
 						<li><a href="#">Home</a></li>
@@ -153,6 +159,7 @@
 					</ul>
 				</center>
 			</div>
+	
 			
 			<!--Profile picture box-->
 			
@@ -181,6 +188,28 @@
 					document.getElementById("navigationid").style.top = "-100%";
 				}
 			}
+			function fade(){
+				document.getElementById("imgid-show-case").style.display = "none";
+			}
+			
+			function largeImg(source){
+				document.getElementById("imgid-show-case").style.display = "block";
+				//var source = document.getElementById(img-id).src;
+				document.getElementById("targetid-img").src = source;
+			}
+			
+			function myFunction(x) {
+				if (x.matches) { // If media query matches
+					document.getElementById("imgid-show-case").style.display = "none";
+					$("img").prop('onclick', null);
+				} else {
+					document.body.style.backgroundColor = "pink";
+				}
+			}
+
+			var x = window.matchMedia("(max-width: 768px)")
+			myFunction(x) 
+			x.addListener(myFunction) 
 		</script>
 	</body>
 </html>
