@@ -31,7 +31,10 @@
 			.img-grid {margin:auto;height:auto;z-index:1;padding:0;background-color:none;}
 			.img-grid-box {height:22vw;padding:0.5vw;background-color:none;}
 			.img_grid_item {width:100%;height:100%;background-size:cover;background-position:center;border:2px solid #00ff00;cursor:pointer;}
-			.draggable {position:absolute;top:-550px;left:0;width:100%;height:650px;background-color:pink;transition:top 0.2s;z-index:2;}
+			.draggable {position:fixed;top:-500px;left:0;width:100%;height:600px;background-color:#060d13;transition:top 0.2s;cursor:pointer;z-index:2;}
+			.draggable::after {content: "";position: absolute;top: 100%;left: 45%;margin-left: -5px;border-width: 40px;border-style: solid;border-color: #060d13 transparent transparent transparent;}
+			.tool-text {width:340px;position:absolute;left:34.3%;bottom:-110px;background-color:white;color:black;padding:10px;border-radius:10px;font:italic 20px georgian;opacity:0;transition:opacity 1s;}
+			.tool-text::after {content: "";position: absolute;bottom: 100%;left: 50%;margin-left: 0px;border-width: 10px;border-style: solid;border-color: transparent transparent white transparent;}
 			
 			@keyframes arrow-anime{
 				0% {font-size:3.5vw;}
@@ -44,11 +47,13 @@
 			}
 		</style>
 	</head>
-	<body>
+	<body onload="myFunction()">
 		<div class="background-box">
 		
 			<!--Draggable shutter-->
-			<div id="draggableid" class="draggable"></div>
+			<div id="draggableid" class="draggable">
+				<center><span id="toolid-text" class="tool-text" style="cursor:default;">Drag the shutter down to view images</span></center>
+			</div>
 			<!---->
 			<div class="heading col-12" style="background-color:none;">
 				<center>
@@ -100,6 +105,14 @@
 			function myfunc(){
 				document.getElementById('draggableid').style.top = "0";
 				//alert("Hi");
+			}
+			
+			function myFunction(){
+				document.getElementById("toolid-text").style.opacity = "1";
+				setTimeout(function() {
+					document.getElementById('toolid-text').style.opacity = "0";
+					//document.getElementById('micicon').className="fas fa-microphone";
+				}, 5000);
 			}
 		</script>
 	</body>
