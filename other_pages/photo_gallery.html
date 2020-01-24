@@ -31,8 +31,9 @@
 			.img-grid {margin:auto;height:auto;z-index:1;padding:0;background-color:none;}
 			.img-grid-box {height:22vw;padding:0.5vw;background-color:none;}
 			.img_grid_item {width:100%;height:100%;background-size:cover;background-position:center;border:2px solid #00ff00;cursor:pointer;}
-			.draggable {position:fixed;top:-500px;left:0;width:100%;height:600px;background-color:red;transition:top 0.2s;cursor:pointer;z-index:2;}
-			.draggable::after {content: "";position: absolute;bottom: -105px;left: 50%;transform: translate(-50%, -50%);border-width: 35px;border-style: solid;border-color: red transparent transparent transparent;}
+			.draggable {position:fixed;top:-500px;left:0;width:100%;height:600px;background-color:white;transition:top 0.1s;cursor:pointer;margin:0;z-index:2;}
+			.draggable::after {content: "";position: absolute;bottom: -105px;left: 50%;transform: translate(-50%, -50%);border-width: 35px;border-style: solid;border-color: white transparent transparent transparent;}
+			.img-box {display:none;width:50%;height:600px;margin:auto;}
 			.tool-text {width:280px;position:absolute;left: 50%;transform: translate(-50%, -50%);bottom:-120px;background-color:white;color:black;padding:10px;border-radius:10px;font:italic 20px georgian;opacity:0;transition:opacity 1s;}
 			.tool-text::after {content: "";position: absolute;bottom:77%;left: 50%;transform: translate(-50%, -50%);border-width: 10px;border-style: solid;border-color: transparent transparent white; transparent;}
 			
@@ -45,6 +46,7 @@
 			@media only screen and (max-width:768px) {
 				.background-box {padding-top:160px;}
 				.draggable {height:500px;top:-450px;}
+				.img-box {width:100%;height:500px;}
 			}
 		</style>
 	</head>
@@ -53,6 +55,7 @@
 		
 			<!--Draggable shutter-->
 			<div id="draggableid" class="draggable">
+				<img id="imgid-box" class="img-box" src="" style="">
 				<center><span id="toolid-text" class="tool-text" style="cursor:default;">Drag down to view images</span></center>
 			</div>
 			<!---->
@@ -67,22 +70,22 @@
 			</div>
 			<div class="row col-md-10 col-12 img-grid">
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/profile_pic.jpg');" onclick="myfunc()"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/profile_pic.jpg');" onclick="myfunc('../imgs/profile_pic.jpg')"></div>
 				</div>
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/background_img.jpg');"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/background_img.jpg');" onclick="myfunc('../imgs/background_img.jpg')"></div>
 				</div>
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/data-science-certificate.jpg');"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/data-science-certificate.jpg');" onclick="myfunc('../imgs/data-science-certificate.jpg')"></div>
 				</div>
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/coding_img.jpg');"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/coding_img.jpg');" onclick="myfunc('../imgs/coding_img.jpg')"></div>
 				</div>
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/chatbot-certificate.jpg');"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/chatbot-certificate.jpg');" onclick="myfunc('../imgs/chatbot-certificate.jpg')"></div>
 				</div>
 				<div class="col-4 img-grid-box">
-					<div class="img_grid_item" style="background-image:url('../imgs/coding_img_2.jpg');"></div>
+					<div class="img_grid_item" style="background-image:url('../imgs/coding_img_2.jpg');" onclick="myfunc('../imgs/coding_img_2.jpg')"></div>
 				</div>
 			</div>
 			<!--Dark sheet-->
@@ -103,9 +106,13 @@
 				});
 			});
 			
-			function myfunc(){
+			function myfunc(source){
 				document.getElementById('draggableid').style.top = "0";
-				//alert("Hi");
+				document.getElementById('imgid-box').style.display = "block";
+				document.getElementById('imgid-box').src = source;
+				//document.getElementById('draggableid').style.backgroundImage = "url('source')";
+				//document.getElementById('draggableid').style.backgroundSize = "cover";
+				
 			}
 			
 			function myFunction(){
